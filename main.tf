@@ -13,6 +13,12 @@ resource "aws_s3_object" "data_folder" {
   content = ""
 }
 
+resource "aws_s3_object" "invoice_folder" {
+  bucket  = aws_s3_bucket.my_bucket.id
+  key     = "invoice-files/"
+  content = ""
+}
+
 resource "aws_s3_object" "customers_upload" {
   bucket = aws_s3_bucket.my_bucket.id
   key    = "data-files/customers.csv"
